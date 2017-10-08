@@ -1,5 +1,4 @@
 <%= render "shared/errors", obj: @listing %>
-
 <div class="row">
   <div class="col-md-12">
     <%= form_for(@listing, :html => {class: "form-horizontal" , role: "form"}) do |f| %>
@@ -13,10 +12,12 @@
     </div>
     <div class="form-group">
       <div class="control-label col-sm-2">
-        <%= f.label :title, "Title *" %>
+        <%= f.label :title do %>
+        Title <span class="required">&#10033;</span>
+        <% end %>
       </div>
       <div class="col-sm-8">
-        <%= f.text_field :title , class: "form-control" , placeholder: "Title of book", autofocus: true %>
+        <%= f.text_field :title , class: "form-control" , placeholder: "Title of book" %>
       </div>
     </div>
     <div class="form-group">
@@ -24,13 +25,15 @@
         <%= f.label :author, "Author" %>
       </div>
       <div class="col-sm-8">
-        <%= f.text_field :author , class: "form-control" , placeholder: "Author's Name", autofocus: true %>
+        <%= f.text_field :author , class: "form-control" , placeholder: "Author's Name" %>
       </div>
     </div>
 
     <div class="form-group">
       <div class="control-label col-sm-2">
-        <%= f.label :condition, "Condition *" %>
+        <%= f.label :condition do %>
+          Condition <span class="required">&#10033;</span>
+        <% end %>
       </div>
       <div class="col-sm-8">
         <%= f.select(:condition,["New", "Used - Like New", "Used - Very Good", "Used - Good", "Used - Acceptable"] ,{:"data-style" => "form-control", :"data-size" => "5"}, {class: "selectpicker", title: "Condition", multiple: false, :"data-max-options" => "1"}) %>
@@ -46,10 +49,12 @@
     </div>
     <div class="form-group">
       <div class="control-label col-sm-2">
-        <%= f.label :price, "Price *" %>
+        <%= f.label :price do %>
+          Price <span class="required">&#10033;</span>
+        <% end %>
       </div>
       <div class="col-sm-8">
-        <%= f.text_field :price , class: "form-control" , placeholder: "Price (in $USD)", autofocus: true %>
+        <%= f.text_field :price , class: "form-control" , placeholder: "Price (in $USD)" %>
       </div>
     </div>
     <div class="form-group">
@@ -57,7 +62,7 @@
           <%= f.label :description  %>
         </div>
         <div class="col-sm-8">
-          <%= f.text_area :description , rows:8, class: "form-control", placeholder: "Description", autofocus: true %>
+          <%= f.text_area :description , rows:8, class: "form-control", placeholder: "Description" %>
         </div>
       </div>
       <div class="form-file-upload is-fileinput">
@@ -65,27 +70,14 @@
           <%= f.label :image %>
         </div>
         <div class="col-sm-8">
-          <%= f.file_field :image do %>
-          <div class="input-group">
-            <input type="text" readonly="" class="form-control" placeholder="Multiple Files">
-            <span class="input-group-btn input-group-s">
-              <button type="button" class="btn btn-just-icon btn-round btn-info">
-                <i class="material-icons">layers</i>
-              </button>
-            </span>
+            <%= f.file_field :image %>
           </div>
-          <% end %>
         </div>
       </div>
-      <div class="row">
-        <div class="col-sm-8 col-sm-offset-2">
-          <p class="text-muted">* Required field</p>
-        </div>
     <div class="form-group">
         <div class="col-sm-10 col-sm-offset-2">
           <%= f.submit class: "btn btn-primary btn-lg" %>
         </div>
     </div>
   <%end%>
-  </div>
 </div>

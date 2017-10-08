@@ -12,7 +12,7 @@
     <div class="main main-raised main-product">
       <div class="row">
         <div class="col-md-6 col-sm-6">
-          <%= render 'carousel', obj: @listing %>
+          <%= image_tag(@listing.image.thumb.url, alt: 'Image') %>
         </div>
         <div class="col-md-6 col-sm-6">
           <h2 class="title"> <%= @listing.title %> </h2>
@@ -59,38 +59,10 @@
   </div>
 </div>
 
-<div class="features text-center">
-  <div class="row">
+<%= render 'features' %>
 
-    <div class="col-md-4">
-      <div class="info">
-        <div class="icon icon-info">
-          <i class="material-icons">local_shipping</i>
-        </div>
-        <h4 class="info-title">2 Days Delivery </h4>
-        <p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
-      </div>
-    </div>
-
-    <div class="col-md-4">
-      <div class="info">
-        <div class="icon icon-success">
-          <i class="material-icons">verified_user</i>
-        </div>
-        <h4 class="info-title">Verified Student</h4>
-        <p>All List Overflow users are verified to have your official school email. If you believe that this user is violating community standards, please <%= link_to contact_path do %>contact us<% end %>.</p>
-      </div>
-    </div>
-
-    <div class="col-md-4">
-      <div class="info">
-        <div class="icon icon-rose">
-          <i class="material-icons">favorite</i>
-        </div>
-        <h4 class="info-title">Popular Item</h4>
-        <p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
-      </div>
-    </div>
-  <%= render 'suggested', obj: @listing if @listing.categories.any? %>
+<div class="row">
+  <div class="container">
+    <%= render 'suggested', obj: @listing if @listing.categories.any? %>
   </div>
 </div>
