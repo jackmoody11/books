@@ -1,0 +1,97 @@
+<div class="page-header header-filter" id="register">
+  <div class="container">
+    <div class="row">
+  		<div class="col-md-10 col-md-offset-1">
+
+  		<div class="card card-signup">
+        <h2 class="card-title text-center">Register</h2>
+        <div class="row">
+
+          <div class="col-md-5 col-md-offset-1">
+
+			     <div class="info info-horizontal">
+				    <div class="icon icon-success">
+					   <i class="material-icons">timeline</i>
+				    </div>
+				    <div class="description">
+					   <h4 class="info-title">Best Prices</h4>
+					   <p class="description">
+						  Join other students and enjoy the benefit of buying used books directly from the owners. That also means you can buy or sell custom textbooks only sold for your school.
+					   </p>
+				    </div>
+        	 </div>
+  				<div class="info info-horizontal">
+  					<div class="icon icon-primary">
+  						<i class="material-icons">lock</i>
+  					</div>
+  					<div class="description">
+  						<h4 class="info-title">Secure</h4>
+  						<p class="description">
+  							Don't worry about getting offers from non-students. All users on List Overflow have a confirmed school email from your university.
+  						</p>
+  					</div>
+  				</div>
+					<div class="info info-horizontal">
+					 <div class="icon icon-warning">
+							<i class="material-icons">send</i>
+						</div>
+						<div class="description">
+							<h4 class="info-title">Convenient</h4>
+							<p class="description">
+								No more worrying about shipping your books through Amazon. Simply meet right on campus to sell your textbooks.
+							</p>
+  					</div>
+  				 </div>
+
+  				</div>
+
+          <div class="col-md-5">
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { role: 'form', class: "form" }) do |f| %>
+            <div class="card-content">
+              <div class="input-group">
+                <span class="input-group-addon">
+                  <i class="material-icons">email</i>
+                </span>
+                <div class="form-group is-empty">
+                  <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "Email..." %>
+                  <span class="material-input"></span>
+                </div>
+              </div>
+              <div class="input-group">
+                <span class="input-group-addon">
+                  <i class="material-icons">lock_outline</i>
+                </span>
+                <div class="form-group is-empty">
+                  <%= f.password_field :password, class: "form-control", placeholder: "Password..." %>
+                  <span class="material-input"></span>
+                </div>
+              </div>
+              <div class="input-group">
+                <span class="input-group-addon">
+                  <i class="material-icons">lock_outline</i>
+                </span>
+                <div class="form-group is-empty">
+                  <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Confirm password..." %>
+                  <span class="material-input"></span>
+                </div>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" name="optionsCheckboxes" checked="">
+                  <span class="checkbox-material"></span>
+                  I agree to the <%= link_to about_path do %>terms and conditions<% end %>.
+                </label>
+              </div>
+            </div>
+
+              <div class="footer text-center">
+                <%= f.submit t('.sign_up', default: 'Sign up'), class: 'btn btn-primary btn-round' %>
+              </div>
+            <% end %>
+            <%= render '/devise/shared/links' %>
+           </div>
+         </div>
+        </div>
+       </div>
+     </div>
+	</div>

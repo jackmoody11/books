@@ -1,0 +1,61 @@
+  <% if content_for?(:nav_transparent) %>
+    <nav class="navbar navbar-fixed-top navbar-inverse navbar-transparent navbar-color-on-scroll"
+         color-on-scroll = "" id="sectionsNav">
+  <% else %>
+    <nav class = "navbar navbar-fixed-top navbar-primary" id="sectionsNav" >
+  <% end %>
+    	<div class="container">
+        	<!-- Brand and toggle get grouped for better mobile display -->
+        	<div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse">
+            		<span class="sr-only">Toggle navigation</span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+        		</button>
+        		<a class="navbar-brand" href="<%= root_path %>">List Overflow<div class="ripple-container"></div></a>
+        	</div>
+
+        	<div class="collapse navbar-collapse" id="example-navbar-primary">
+        		<ul class="nav navbar-nav navbar-right">
+
+              <% if user_signed_in? %>
+    				      <li>
+				           <%= link_to listings_path do %>
+					         <i class="material-icons">reorder</i> Listings
+				           <% end %>
+    				      </li>
+
+    				<li class="dropdown">
+    					<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+    						<i class="material-icons">add</i> Actions
+    						<b class="caret"></b>
+    					<div class="ripple-container"></div></a>
+    					<ul class="dropdown-menu dropdown-with-icons">
+                <li><%= link_to "New Listing", new_listing_path %></li>
+                <% if current_user.admin? %>
+                  <li><%= link_to "New Category", new_category_path %></li>
+                <% end %>
+    					</ul>
+    				</li>
+            <% end %>
+
+            <% if user_signed_in? %>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="material-icons">person</i><%= "(Admin)" if current_user.admin? %> <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to "Edit profile", edit_user_path(current_user) %></li>
+                  <li><%= link_to "View profile", user_path(current_user) %></li>
+                  <li><%= link_to "Log out", logout_path, method: :delete %></li>
+                </ul>
+              </li>
+            <% else %>
+              <li><%= link_to "Log in", login_path %></li>
+              <li><%= link_to "Sign up", signup_path, class: "btn btn-white btn-raised btn-round" %></li>
+            <% end %>
+
+        		</ul>
+
+        	</div>
+    	</div>
+    </nav>

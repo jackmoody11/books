@@ -1,0 +1,19 @@
+<% @user.listings.reverse.each do |listing| %>
+  <div class="col-md-6">
+    <div class="card card-background" style="background-image: url('http://bit.ly/1OuVuG6')">
+      <a href="#pablo"></a>
+        <div class="card-content">
+          <% listing.categories.each do |category| %>
+          <li class="category-list">
+            <%= link_to category_path(category), id: "category-label" do %>
+              <span class="label label-primary"><%= category.name %></span>
+            <% end %>
+          </li>
+        <% end %>
+          <%= link_to listing_path(listing) do %>
+          <h2 class="card-title"><%= truncate(listing.title, length: 20) %></h2>
+          <% end %>
+      </div>
+    </div>
+   </div>
+<% end %>

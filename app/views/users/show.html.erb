@@ -1,0 +1,92 @@
+<% content_for :body_class, "profile-page" %>
+
+<div class="page-header header-filter" data-parallax="true" filter-color="info"></div>
+	<div class="main main-raised">
+		<div class="profile-content">
+            <div class="container">
+                <div class="row">
+	                <div class="col-xs-6 col-xs-offset-3">
+        	           <div class="profile">
+	                        <div class="avatar">
+	                            <%= gravatar_for @user, size: 150, class: "img-circle img-responsive img-raised" %>
+	                        </div>
+													<% if @user.username %>
+	                        <div class="name">
+	                            <h3 class="title"><%= @user.username %></h3>
+															<% if @user.grad_year %>
+																<h6>Graduates in <%= @user.grad_year %></h6>
+															<% end %>
+																<a href="#pablo" class="btn btn-just-icon btn-simple btn-dribbble"><i class="fa fa-dribbble"></i></a>
+                                <a href="#pablo" class="btn btn-just-icon btn-simple btn-twitter"><i class="fa fa-twitter"></i></a>
+                                <a href="#pablo" class="btn btn-just-icon btn-simple btn-pinterest"><i class="fa fa-pinterest"></i></a>
+	                        </div>
+													<% end %>
+	                    </div>
+    	            </div>
+									<!--
+                    <div class="col-xs-2 follow">
+	                   <button class="btn btn-fab btn-primary" rel="tooltip" title="Follow this user">
+                            <i class="material-icons">add</i>
+                        </button>
+	                	</div>
+									-->
+                </div>
+
+							<% if @user.summary %>
+                <div class="description text-center">
+									<p><%= @user.summary %></p>
+                </div>
+							<% end %>
+
+				<div class="row">
+					<div class="col-md-6 col-md-offset-3">
+						<div class="profile-tabs">
+		                    <div class="nav-align-center">
+								<ul class="nav nav-pills nav-pills-icons" role="tablist">
+									<li class="active">
+                    <a href="#work" role="tab" data-toggle="tab">
+											<i class="material-icons">reorder</i>
+											Listings
+                    </a>
+			             </li>
+			           </ul>
+							</div>
+						</div>
+						<!-- End Profile Tabs -->
+					</div>
+        </div>
+                <div class="tab-content">
+			        		<div class="tab-pane active work" id="work">
+				        		<div class="row">
+	                   	<div class="col-md-7 col-md-offset-1">
+		                  	<h4 class="title">Latest Listings</h4>
+		                     	<div class="row collections">
+														<%= render 'listings' %>
+                            </div>
+		                    	</div>
+
+		                  <div class="col-md-2 col-md-offset-1 stats">
+			                    <h4 class="title">Stats</h4>
+			                    <ul class="list-unstyled">
+				                    <li><b><%= @user.listings.count %></b> Listings</li>
+				                    <li><b><%= @user.categories.distinct.count %></b> Subjects</li>
+				                    <li><b>1.2K</b> Likes</li>
+				                	</ul>
+				                	<hr />
+
+													<h4 class="title">Subjects</h4>
+													<% @user.categories.distinct.each do |category| %>
+													<li class="category-list">
+														<%= link_to category_path(category), id: "category-label" do %>
+															<span class="label label-primary"><%= category.name %></span>
+														<% end %>
+													</li>
+												<% end %>
+			                </div>
+	                 </div>
+			        	</div>
+			    		</div>
+
+            </div>
+        	</div>
+				</div>

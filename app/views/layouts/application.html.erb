@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Books</title>
+    <%= csrf_meta_tags %>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+    <% if content_for?(:body_class) %>
+    <body class="<%= yield (:body_class) %>">
+    <% else %>
+    <body>
+    <% end %>
+    <% if !content_for?(:nav_transparent) %>
+      <%= render 'layouts/navigation' %>
+      <div class="section-space"></div>
+    <% else %>
+      <%= render 'layouts/navigation' %>
+    <% end %>
+
+    <% if !content_for?(:body_class) %>
+      <div class="container">
+        <%= render 'layouts/messages' %>
+        <%= yield %>
+      </div>
+    <% else %>
+    <%= render 'layouts/messages' %>
+      <%= yield %>
+    <% end %>
+
+    <%= render 'layouts/footer' %>
+  </body>
+</html>

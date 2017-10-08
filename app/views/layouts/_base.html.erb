@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <%= csrf_meta_tags %>
+
+    <title>List Overflow</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <%= favicon_link_tag 'apple-icon.png', rel: 'apple-touch-icon', type: 'image/png', sizes: '76x76' %>
+    <%= favicon_link_tag 'favicon.png', rel: 'icon', type: 'image/png' %>
+
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+
+    <%= yield :head %>
+  </head>
+  <body class="<%= yield :class %>" data-features="<%= yield :features %>">
+    <%= yield %>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<% @listings.each_slice(3) do |list_row| %>
+  <div class="row">
+      <% list_row.each do |listing| %>
+      <div class="col-md-4">
+      <div class="card card-profile card-plain">
+        <a href="<%= listing_path(listing) %>">
+          <div class="card-image">
+      			<img class="img" src="<%= listing.image.url %>">
+      			<div class="card-title">
+      				$ <%= listing.price %>
+      			</div>
+          	<div class="colored-shadow" style="background-image: url(<%= listing.image.card.url %>); opacity: 1;"></div>
+            <div class="ripple-container"></div>
+        </div>
+        </a>
+      <a href="<%= listing_path(listing) %>">
+      	<div class="card-content">
+      		<h6 class="category text-info"><%= truncate(listing.title, length: 30) %></h6>
+      		<p class="card-description">
+            <%= truncate(listing.author, length: 25) + "&middot;" if listing.author %> <%= listing.condition %>
+      		</p>
+      	</div>
+      </a>
+      </div>
+    </div>
+    <% end %>
+  </div>
+<% end %>

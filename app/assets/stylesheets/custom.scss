@@ -1,0 +1,142 @@
+// Temporary solution to devise messages (Make this equal to .alert-danger and .alert-success in future)
+.alert-alert{
+  @extend .alert-danger;
+}
+
+.alert-notice {
+  @extend .alert-success;
+}
+// Load fonts
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons');
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css');
+// Set images
+#login{
+  background-image: url('book1.jpg');
+  background-size: cover;
+  background-position: top center;
+}
+
+#register{
+  background-image: url('book1.jpg');
+  background-size: cover;
+  background-position: top center;
+}
+
+html, body{
+  background-color: white;
+}
+
+// Place all the styles related to the Listings controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// colors
+$main-black: #363732;
+$main-gray: #546A76;
+$main-light-blue: #3AB4FF;
+$main-light-blue-dark: #007ECC;
+$main-navy: #12355B;
+$main-light-green: #55DDA9;
+$main-light-green-dark: #22AA76;
+$main-light-red: #FF3341;
+$main-light-red-dark: #CC000E;
+$main-white: #EAEAEA;
+$white: #FFFFFF;
+$primary: #3AB4FF;
+
+// times
+/*$logo-hover-time: 250ms;*/
+
+// custom
+#logo{
+  float:left;
+  font-size:1.7em;
+  /*color:$white;*/
+  text-transform:uppercase;
+  letter-spacing:-1px;
+  font-weight:bold;
+/*    transition: color $logo-hover-time ease-out;
+    -webkit-transition: color $logo-hover-time ease-out;
+    -moz-transition: color $logo-hover-time ease-out;
+    -o-transition: color $logo-hover-time ease-out;*/
+    &:hover{
+      text-decoration:none;
+    }
+}
+
+.category-list{
+  margin: 0 0 6px 0;
+}
+
+.center{
+  text-align:center;
+}
+
+.listing-actions{
+  border-top:1px solid $main-white;
+  padding-top: 5px;
+}
+
+.listing-body{
+  border-top: 1px solid $main-white;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.listing-title{
+  font-weight:bold;
+  font-size:1.5em;
+}
+
+.show-description{
+  margin-top: 0;
+}
+
+.input_checkbox input{
+  width: auto !important;
+}
+
+// basics
+a{
+  text-decoration: none;
+}
+
+footer{
+  margin-top:45px;
+  padding-top:5px;
+  margin-bottom:10px;
+  border-top:1px solid $main-white;
+  color:#777;
+    a:hover{
+      color:$main-black;
+    }
+
+  #footer-left{
+    float: left;
+  }
+  #footer-right{
+    float: right;
+  }
+
+    ul{
+      list-style:none;
+      float:right;
+      li{
+        float:left;
+        margin-left:15px;
+      }
+    }
+}
+
+li{
+  list-style-type: none;
+}
+
+
+.search-outline{
+  background-color: $grey-50;
+  border-radius: 4px !important;
+  border: 1px solid #DBDBDB !important;
+  box-shadow: 0 1px 3px 0px rgba(0, 0, 0, 0.08) !important;
+  padding: 0px 5px 0px 5px !important;
+}
