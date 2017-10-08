@@ -12,7 +12,7 @@ class Listing < ApplicationRecord
   validates :isbn, allow_nil: true,
                    numericality: {greater_than_or_equal_to: 999999999, less_than_or_equal_to: 9999999999999}
 
-mount_uploader :image, ImageUploader
+  mount_uploader :image, ImageUploader
 
   # Add basic search
   def self.search(search)
