@@ -1,6 +1,6 @@
 <% @user.listings.reverse.each do |listing| %>
   <div class="col-md-6">
-    <div class="card card-background" style="background-image: url('http://bit.ly/1OuVuG6')">
+    <div class="card card-background" style="background-image: url(<%= listing.image.url %>)">
       <a href="#pablo"></a>
         <div class="card-content">
           <% listing.categories.each do |category| %>
