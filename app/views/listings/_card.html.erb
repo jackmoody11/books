@@ -16,11 +16,25 @@
       <a href="<%= listing_path(listing) %>">
       	<div class="card-content">
       		<h6 class="category text-info"><%= truncate(listing.title, length: 30) %></h6>
-      		<p class="card-description">
-            <%= truncate(listing.author, length: 25) + "&middot;" if listing.author %> <%= listing.condition %>
-      		</p>
+
+          <div class="footer">
+            <div class="col-md-6">
+              <%= link_to user_path(listing.user) do %>
+                <div class="author">
+                    <%= small_gravatar_for listing.user, class: "img-circle img-responsive img-raised", align: "left" %>
+                       <span><%= listing.user.first_name + " " + listing.user.last_name %></span>
+                </div>
+                <% end %>
+              </div>
+              <div class="col-md-6">
+                <p class="card-description">
+                  <%= truncate(listing.author, length: 25) + "&middot;" if listing.author %> <%= listing.condition %>
+            		</p>
+            </div>
+          </div>
       	</div>
       </a>
+
       </div>
     </div>
     <% end %>
