@@ -1,140 +1,121 @@
 <% content_for :body_class, "landing-page" %>
 <% content_for :nav_transparent, true %>
-
 <div class="page-header header-filter" data-parallax="true" style="background-image: url(http://bit.ly/1OuVuG6); transform: translate3d(0px, 0px, 0px);">
-       <div class="container">
-           <div class="row">
-       <div class="col-md-6">
-         <h1 class="title">Used Textbooks Simplified.</h1>
-                   <h4>
-                      Stop paying lots of $$$ for textbooks and selling them for next to nothing.
-                      Let List Overflow help you find the best deal whether you are buying or selling
-                      used textbooks.
-                      <% if !(user_signed_in?)%> Sign up or log in!<% end %>
-                   </h4>
-                   <% if !(user_signed_in?) %>
-                        <br>
-                        <%= link_to signup_path,  class: "btn btn-success btn-lg" do %>
-                        <i class="material-icons">person_add</i>Sign Up
-                        <% end %>
-                        <%= link_to login_path,  class: "btn btn-primary btn-lg" do %>
-                        <i class="material-icons">account_circle</i>Login
-                        <% end %>
-                  <% elsif user_signed_in? %>
-                        <br>
-                        <a href="#scrollHome" rel="relanchor" class="btn btn-primary btn-lg">Learn More</a> <!--Add CSS for smooth transition-->
-                   <% end %>
-         </a>
-       </div>
-           </div>
-       </div>
-   </div>
-
- <div class="main main-raised" id="scrollHome">
-   <div class="container">
-       <div class="section text-center">
-               <div class="row">
-                   <div class="col-md-8 col-md-offset-2">
-                       <h2 class="title">List Overflow Perks</h2>
-                       <h5 class="description">
-                         Why not use Facebook or Craigslist? Aren't there other options
-                         out there? List Overflow simplifies posting books, connecting to your
-                         target audience (students just like you), and keeps you safe all
-                         while giving both buyers and sellers the most competitive market prices
-                         for used books.
-                       </h5>
-                   </div>
-               </div>
-
-       <div class="features">
-         <div class="row">
-           <div class="col-md-4">
-             <div class="info">
-               <div class="icon icon-info">
-                 <i class="material-icons">chat</i>
-               </div>
-               <h4 class="info-title">Private Messaging</h4>
-               <p>
-                 Built in private messaging helps you keep your information
-                 safe. No more worrying about posting email or phone numbers online.
-               </p>
-             </div>
-           </div>
-
-           <div class="col-md-4">
-             <div class="info">
-               <div class="icon icon-success">
-                 <i class="material-icons">verified_user</i>
-               </div>
-               <h4 class="info-title">Verified Users</h4>
-               <p>
-                 Be sure that you are talking to students from your school.
-                 We verify that all users have a valid email from your school. No
-                 more posts on Facebook to annoy all of your other friends.
-               </p>
-             </div>
-           </div>
-
-           <div class="col-md-4">
-             <div class="info">
-               <div class="icon icon-danger">
-                 <i class="material-icons">fingerprint</i>
-               </div>
-               <h4 class="info-title">Secure</h4>
-               <p>
-                 List Overflow uses secure password hashing to keep your information safe.
-               </p>
-             </div>
-           </div>
-                 </div>
-       </div>
-           </div>
-
-
-
-
-         <div class="section section-contacts">
-               <div class="row">
-                   <div class="col-md-8 col-md-offset-2">
-                       <h2 class="text-center title">Work with us</h2>
-           <h4 class="text-center description">
-             Want to make college more affordable at your school? Contact us about
-             becoming a part of the List Overflow team and we will set up a time to talk.
-          </h4>
-                       <form class="contact-form">
-                           <div class="row">
-                               <div class="col-md-6">
-                 <div class="form-group label-floating is-empty">
-                   <label class="control-label">Your Name</label>
-                   <input class="form-control">
-                 <span class="material-input"></span></div>
-                               </div>
-                               <div class="col-md-6">
-                 <div class="form-group label-floating is-empty">
-                   <label class="control-label">Your Email</label>
-                   <input type="email" class="form-control">
-                 <span class="material-input"></span></div>
-                               </div>
-                           </div>
-
-             <div class="form-group label-floating is-empty">
-               <label class="control-label">University/College</label>
-               <input class="form-control">
-              <span class="material-input"></span>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h1 class="title">Used Textbooks Simplified.</h1>
+        <h4>
+          Stop paying lots of $$$ for textbooks and selling them for next to nothing. Let List Overflow help you find the best deal whether you are buying or selling used textbooks.
+          <% if !(user_signed_in?)%>
+          Sign up or log in!<% end %>
+        </h4>
+        <% if !(user_signed_in?) %>
+        <br>
+        <%= link_to signup_path,  class: "btn btn-success btn-lg" do %>
+        <i class="material-icons">person_add</i>Sign Up
+        <% end %>
+        <%= link_to login_path,  class: "btn btn-primary btn-lg" do %>
+        <i class="material-icons">account_circle</i>Login
+        <% end %>
+        <% elsif user_signed_in? %>
+        <br>
+        <a href="#scrollHome" rel="relanchor" class="btn btn-primary btn-lg">Learn More</a>
+        <!--Add CSS for smooth transition-->
+        <% end %>
+      </a>
+    </div>
+  </div>
+</div>
+</div>
+<div class="main main-raised" id="scrollHome">
+<div class="container">
+  <div class="section text-center">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <h2 class="title">List Overflow Perks</h2>
+        <h5 class="description">
+          List Overflow simplifies posting books, connecting to your target audience (students just like you), and keeps you safe all while giving both buyers and sellers the most competitive market prices for used books.
+        </h5>
+      </div>
+    </div>
+    <div class="features">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="info">
+            <div class="icon icon-info">
+              <i class="material-icons">chat</i>
             </div>
-
-                           <div class="row">
-                               <div class="col-md-4 col-md-offset-4 text-center">
-                                   <button class="btn btn-primary btn-raised">
-                   Send Message
-                 </button>
-                               </div>
-                           </div>
-                       </form>
-                   </div>
-               </div>
-
-           </div>
-       </div>
-
- </div>
+            <h4 class="info-title">Private Messaging</h4>
+            <p>
+              Built in private messaging helps you keep your information safe. No more worrying about posting email or phone numbers online.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="info">
+            <div class="icon icon-success">
+              <i class="material-icons">verified_user</i>
+            </div>
+            <h4 class="info-title">Verified Users</h4>
+            <p>
+              We make sure you reach your target audience by verifying all members have a valid email address from your school.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="info">
+            <div class="icon icon-danger">
+              <i class="material-icons">fingerprint</i>
+            </div>
+            <h4 class="info-title">Secure</h4>
+            <p>
+              List Overflow uses secure password hashing to keep your information safe and is completely free to use.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section section-contacts">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <h2 class="text-center title">Work with us</h2>
+        <h4 class="text-center description">
+          Want to make college more affordable at your school? Contact us about becoming a part of the List Overflow team and we will set up a time to talk.
+        </h4>
+        <form class="contact-form">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group label-floating is-empty">
+                <label class="control-label">Your Name</label>
+                <input class="form-control">
+                <span class="material-input"></span>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group label-floating is-empty">
+                <label class="control-label">Your Email</label>
+                <input type="email" class="form-control">
+                <span class="material-input"></span>
+              </div>
+            </div>
+          </div>
+          <div class="form-group label-floating is-empty">
+            <label class="control-label">University/College</label>
+            <input class="form-control">
+            <span class="material-input"></span>
+          </div>
+          <div class="row">
+            <div class="col-md-4 col-md-offset-4 text-center">
+              <button class="btn btn-primary btn-raised">
+                Send Message
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
