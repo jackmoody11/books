@@ -1,11 +1,9 @@
 <% content_for :body_class, "product-page" %>
-  <div class="page-header" data-parallax="true" style="background-image: url(<%= @listing.image.url %>)">
+<div class="page-header" data-parallax="true" style="background-image: url(<%= @listing.image.url %>)">
   <div class="container">
-    <div class="row title-row">
-    </div>
+    <div class="row title-row"></div>
   </div>
 </div>
-
 <div class="section">
   <div class="container">
     <div class="main main-raised main-product">
@@ -14,54 +12,51 @@
           <%= image_tag(@listing.image.thumb.url, alt: 'Image') %>
         </div>
         <div class="col-md-6 col-sm-6">
-          <h2 class="title"> <%= @listing.title %> </h2>
+          <h2 class="title">
+            <%= @listing.title %>
+          </h2>
           <h3 class="main-price">$<%= @listing.price %></h3>
           <div id="acordeon">
             <% if @listing.description.length >= 1 && !(@listing.description.blank?) %>
             <div class="panel-group">
               <div class="panel panel-border panel-default">
                 <div class="panel-heading" role="tab" id="headingOne">
-                    <h4 class="panel-title">Description</h4>
+                  <h4 class="panel-title">Description</h4>
                 </div>
-                  <br />
-                    <p class="description"><%= @listing.description %></p>
-                </div>
+                <br/>
+                <p class="description"><%= @listing.description %></p>
               </div>
-              <% end %>
-              <div class="panel-group">
-                <div class="panel panel-border panel-default">
-                  <div class="panel-heading" role="tab" id="headingOne">
-                      <h4 class="panel-title">Condition</h4>
-                  </div>
-                    <br />
-                      <p class="description"><%= @listing.condition %></p>
-                  </div>
-                </div>
-
-              <% if @listing.categories.any? %>
-
-              <div class="panel-group">
-                <div class="panel panel-border panel-default">
-                  <div class="panel-heading" role="tab" id="headingOne">
-                      <h4 class="panel-title">Departments</h4>
-                  </div>
-                    <br />
-                      <%= render @listing.categories %>
-                  </div>
-                </div>
-              <% end %>
             </div>
+            <% end %>
+            <div class="panel-group">
+              <div class="panel panel-border panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <h4 class="panel-title">Condition</h4>
+                </div>
+                <br/>
+                <p class="description"><%= @listing.condition %></p>
+              </div>
             </div>
+            <% if @listing.categories.any? %>
+            <div class="panel-group">
+              <div class="panel panel-border panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <h4 class="panel-title">Departments</h4>
+                </div>
+                <br/>
+                <%= render @listing.categories %>
+              </div>
+            </div>
+            <% end %>
           </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
-
 <%= render 'features' %>
-
 <div class="row">
-  <div class="container">
-    <%= render 'suggested', obj: @listing if @listing.categories.any? %>
-  </div>
+<div class="container">
+  <%= render 'suggested', obj: @listing if @listing.categories.any? %>
+</div>
 </div>
