@@ -48,6 +48,17 @@
               </div>
             </div>
             <% end %>
+            <hr>
+            <div class="panel-group">
+              <div class="panel panel-border panel-default">
+                  <div class="author">
+                    <%= link_to user_path(@listing.user) do %>
+                      <%= small_gravatar_for @listing.user,size: 40, class: "img-circle img-responsive img-raised", align: "left" %>
+                      <span><%= @listing.user.first_name + " " + @listing.user.last_name %></span>
+                      <% end %>
+                  </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
