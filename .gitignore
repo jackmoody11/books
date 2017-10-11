@@ -22,6 +22,5 @@
 
 .byebug_history
 sendgrid.env
-/config/secrets.yml
 
 public/uploads
