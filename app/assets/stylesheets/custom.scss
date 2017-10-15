@@ -137,6 +137,6 @@ li{
 }
 
 .homepage{
-  background-image: image-url("book2.jpg");
+  background-image: url("<%= asset_path('book2.jpg') %>");
   transform: translate3d(0px, 0px, 0px);
 }
