@@ -1,3 +1,4 @@
+
 // Temporary solution to devise messages (Make this equal to .alert-danger and .alert-success in future)
 .alert-alert{
   @extend .alert-danger;
@@ -137,6 +138,6 @@ li{
 }
 
 .homepage{
-  background-image: url("<%= asset_path('book2.jpg') %>");
+  background-image: image-url("book2.jpg");
   transform: translate3d(0px, 0px, 0px);
 }
