@@ -1,5 +1,5 @@
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
-//= depend_on_asset "images/book2.jpg"
+//= depend_on_asset "book2.jpg"
 @import "bootstrap";
 @import "devise_bootstrap_views";
 @import "sass2/material-kit.scss";
