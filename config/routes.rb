@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   root 'pages#home'
   get "/about", to: "pages#about"
   get "/contact", to: "pages#contact"
+  get "/terms", to: "pages#terms"
+  get "/privacy", to: "pages#privacy"
 
     devise_scope :user do
       get 'login', to: 'devise/sessions#new'

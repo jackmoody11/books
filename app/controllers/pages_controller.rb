@@ -15,4 +15,12 @@ class PagesController < ApplicationController
   def contact
     render 'contact'
   end
+
+  def terms
+    render 'terms'
+  end
+
+  def privacy
+    render 'privacy'
+  end
 end
