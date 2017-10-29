@@ -59,6 +59,25 @@
               </div>
               <div class="input-group">
                 <span class="input-group-addon">
+                  <i class="material-icons">face</i>
+                </span>
+                  <div class="row">
+                    <div class="col-xs-6">
+                      <div class="form-group is-empty">
+                      <%= f.text_field :first_name, class: "form-control", placeholder: "First Name..." %>
+                      <span class="material-input"></span>
+                      </div>
+                    </div>
+                    <div class="col-xs-6">
+                      <div class="form-group is-empty">
+                      <%= f.text_field :last_name, class: "form-control", placeholder: "Last Name..." %>
+                      <span class="material-input"></span>
+                      </div>
+                    </div>
+                </div>
+              </div>
+              <div class="input-group">
+                <span class="input-group-addon">
                   <i class="material-icons">lock_outline</i>
                 </span>
                 <div class="form-group is-empty">
@@ -79,7 +98,7 @@
                 <label>
                   <input type="checkbox" name="optionsCheckboxes" checked="">
                   <span class="checkbox-material"></span>
-                  I agree to the <%= link_to about_path do %>terms and conditions<% end %>.
+                  I agree to the <%= link_to terms_path do %>terms and conditions<% end %>.
                 </label>
               </div>
             </div>
