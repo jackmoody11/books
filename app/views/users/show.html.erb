@@ -10,9 +10,8 @@
 	                        <div class="avatar">
 	                            <%= gravatar_for @user, size: 150, class: "img-circle img-responsive img-raised" %>
 	                        </div>
-													<% if @user.username %>
 	                        <div class="name">
-	                            <h3 class="title"><%= @user.username %></h3>
+	                            <h3 class="title"><%= @user.first_name + " " + @user.last_name %></h3>
 															<% if @user.grad_year %>
 																<h6>Graduates in <%= @user.grad_year %></h6>
 															<% end %>
@@ -20,7 +19,6 @@
                                 <a href="#pablo" class="btn btn-just-icon btn-simple btn-twitter"><i class="fa fa-twitter"></i></a>
                                 <a href="#pablo" class="btn btn-just-icon btn-simple btn-pinterest"><i class="fa fa-pinterest"></i></a>
 	                        </div>
-													<% end %>
 	                    </div>
     	            </div>
 									<!--
