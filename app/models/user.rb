@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :listings, dependent: :destroy
   has_many :categories, through: :listings
-  before_save { self.email = email.downcase }
+  before_save { self.email = email.downcase } # Add titleize or some equivalent to first_name and last_name
   VALID_UNC_EMAIL = /\A[\w+\-.]+@live.unc.edu\z/i
   validates :email, presence: true, length: { maximum: 105 },
                     uniqueness: { case_sensitive: false },
