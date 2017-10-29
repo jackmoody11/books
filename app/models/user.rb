@@ -6,12 +6,6 @@ class User < ApplicationRecord
   has_many :listings, dependent: :destroy
   has_many :categories, through: :listings
   before_save { self.email = email.downcase}
-  if !first_name.nil?
-    before_save {self.first_name = first_name.titleize}
-  end
-  if !last_name.nil?
-    before_save{self.last_name = last_name.titleize}
-  end
   VALID_UNC_EMAIL = /\A[\w+\-.]+@live.unc.edu\z/i
   validates :email, presence: true, length: { maximum: 105 },
                     uniqueness: { case_sensitive: false },
