@@ -10,9 +10,9 @@ class User < ApplicationRecord
   validates :email, presence: true, length: { maximum: 105 },
                     uniqueness: { case_sensitive: false },
                     format: { with: VALID_UNC_EMAIL, message: "You must use a valid @live.unc.edu email" }
-    current_year = Time.now.year
-    validates :first_name, length: {maximum: 20}
-    validates :last_name, length: {maximum: 20}
+  current_year = Time.now.year
+  validates :first_name, length: {maximum: 20}
+  validates :last_name, length: {maximum: 20}
     # Optionals
     validates :summary, length: { maximum: 500}, allow_nil: true
     validates :grad_year, numericality: { greater_than_or_equal_to: current_year,
