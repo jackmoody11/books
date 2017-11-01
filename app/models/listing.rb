@@ -24,18 +24,19 @@ class Listing < ApplicationRecord
   end
 
   # Add ISBN lookup
-  def self.isbn_lookup(val)
+  def self.amazon_lookup(val)
     request = Vacuum.new('US')
     request.configure(
-    aws_access_key_id: ENV['AWS_ACCESS_KEY_ID'], #TURN INTO ENV
-    aws_secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'], #TURN INTO ENV
-    associate_tag: ENV['AWS_ASSOCIATE_TAG'] #TURN INTO ENV
+    aws_access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+    aws_secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
+    associate_tag: ENV['AWS_ASSOCIATE_TAG']
     )
     response = request.item_lookup(
       query: {
         'ItemId' => val,
         'SearchIndex' => 'Books',
-        'IdType' => 'ISBN'
+        'IdType' => 'ISBN',
+        'ResponseGroup' => 'ItemAttributes, Offers',
       },
       persistent: true
     )
@@ -44,7 +45,22 @@ class Listing < ApplicationRecord
     title = fr.dig("ItemLookupResponse","Items","Item","ItemAttributes","Title")
     manufacturer = fr.dig("ItemLookupResponse","Items","Item","ItemAttributes","Manufacturer")
     url = fr.dig("ItemLookupResponse","Items","Item","ItemLinks","ItemLink",6,"URL")
-    return {title: title, author: author, manufacturer: manufacturer, url: url}
+    # Amount times 100
+    newPrice = fr.dig("ItemLookupResponse", "Items","Item", "ItemAttributes", "ListPrice", "Amount").to_f
+    newTradeIn = fr.dig("ItemLookupResponse", "Items","Item", "ItemAttributes", "TradeInValue", "Amount").to_f
+    newPriceLow = fr.dig("ItemLookupResponse", "Items","Item", "OfferSummary", "LowestNewPrice", "Amount").to_f
+    usedPriceLow = fr.dig("ItemLookupResponse", "Items","Item", "OfferSummary", "LowestUsedPrice", "Amount").to_f
+    # URLs
+    allOffersUrl = fr.dig("ItemLookupResponse", "Items", "Item", "Offers", "MoreOffersUrl")
+    # Proper float value
+    newTradeIn = newTradeIn ? newTradeIn / 100 : nil
+    newPrice = newPrice ? newPrice / 100 : nil
+    newPriceLow = newPriceLow ? newPriceLow / 100 : nil
+    usedPriceLow = usedPriceLow ? usedPriceLow / 100 : nil
+    return {title: title, author: author, manufacturer: manufacturer,
+            url: url, newPrice: newPrice, newTradeIn: newTradeIn,
+            newPrice: newPrice, newPriceLow: newPriceLow, usedPriceLow: usedPriceLow,
+            allOffersUrl: allOffersUrl}
   end
 
 

@@ -1,7 +1,7 @@
 class ListingsController < ApplicationController
  before_action :set_listing, only: [:edit, :update, :destroy, :show]
  before_action :require_same_user, only: [:edit, :update, :destroy]
- #Listing.isbn_lookup
+ #Listing.amazon_lookup
 
   def new
     @listing = Listing.new
