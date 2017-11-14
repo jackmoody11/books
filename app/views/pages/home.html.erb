@@ -21,7 +21,7 @@
         <% elsif user_signed_in? %>
         <br>
         <a href="#scrollHome" rel="relanchor" class="btn btn-primary btn-lg">Learn More</a>
-        <!--Add CSS for smooth transition-->
+        <%= link_to "Create Listing", new_listing_path, class: "btn btn-success btn-lg" %>
         <% end %>
       </a>
     </div>
