@@ -45,56 +45,12 @@ $main-white: #EAEAEA;
 $white: #FFFFFF;
 $primary: #3AB4FF;
 
-// times
-/*$logo-hover-time: 250ms;*/
-
-// custom
-#logo{
-  float:left;
-  font-size:1.7em;
-  /*color:$white;*/
-  text-transform:uppercase;
-  letter-spacing:-1px;
-  font-weight:bold;
-/*    transition: color $logo-hover-time ease-out;
-    -webkit-transition: color $logo-hover-time ease-out;
-    -moz-transition: color $logo-hover-time ease-out;
-    -o-transition: color $logo-hover-time ease-out;*/
-    &:hover{
-      text-decoration:none;
-    }
-}
-
 .category-list{
   margin: 0 0 6px 0;
 }
 
 .center{
   text-align:center;
-}
-
-.listing-actions{
-  border-top:1px solid $main-white;
-  padding-top: 5px;
-}
-
-.listing-body{
-  border-top: 1px solid $main-white;
-  padding-top: 15px;
-  padding-bottom: 15px;
-}
-
-.listing-title{
-  font-weight:bold;
-  font-size:1.5em;
-}
-
-.show-description{
-  margin-top: 0;
-}
-
-.input_checkbox input{
-  width: auto !important;
 }
 
 // basics
