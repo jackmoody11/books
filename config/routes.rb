@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get "/contact", to: "pages#contact"
   get "/terms", to: "pages#terms"
   get "/privacy", to: "pages#privacy"
+  get "/courses", to: "pages#courses"
 
     devise_scope :user do
       get 'login', to: 'devise/sessions#new'
