@@ -15,7 +15,7 @@
         </a>
       <a href="<%= listing_path(listing) %>">
       	<div class="card-content">
-      		<h6 class="category text-info"><%= truncate(listing.title, length: 30) %></h6>
+      		<h6 class="category text-default"><%= truncate(listing.title, length: 30) %></h6>
       		<p class="card-description">
             <%= listing.author if listing.author %> &middot; <%= listing.condition %> Condition
       		</p>

@@ -1,4 +1,4 @@
-<h1 align="center"><%= "Category: " + @category.name.capitalize %></h1>
+<h1 align="center"><%= @category.name.capitalize + " Department" %></h1>
 <div align="center">
 <% if user_signed_in? && current_user.admin? %>
   <div class="row">
