@@ -24,8 +24,4 @@ class PagesController < ApplicationController
     render 'privacy'
   end
 
-  def courses
-    @categories = Category.all
-    render 'courses'
-  end
 end
