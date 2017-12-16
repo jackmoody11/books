@@ -63,8 +63,8 @@
 		                  <div class="col-md-2 col-md-offset-1 stats">
 			                    <h4 class="title">Stats</h4>
 			                    <ul class="list-unstyled">
-				                    <li><b><%= @user.listings.count %></b> Listings</li>
-				                    <li><b><%= @user.categories.distinct.count %></b> Subjects</li>
+				                    <li><b><%= @user.listings.count %></b> <%= "Book".pluralize(@user.listings.count) %></li>
+				                    <li><b><%= @user.categories.distinct.count %></b> <%= "Subject".pluralize(@user.categories.distinct.count) %></li>
 				                    <!-- <li><b>1.2K</b> Likes</li> -->
 				                	</ul>
 				                	<hr />
