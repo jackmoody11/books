@@ -10,8 +10,6 @@
 
     <% if content_for?(:body_class) %>
     <body class="<%= yield (:body_class) %>">
-    <% else %>
-    <body>
     <% end %>
     <% if !content_for?(:nav_transparent) %>
       <%= render 'layouts/navigation' %>

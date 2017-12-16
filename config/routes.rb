@@ -4,12 +4,12 @@ Rails.application.routes.draw do
   resources :listings
   resources :users
   resources :categories
+  resources :courses
   root 'pages#home'
   get "/about", to: "pages#about"
   get "/contact", to: "pages#contact"
   get "/terms", to: "pages#terms"
   get "/privacy", to: "pages#privacy"
-  get "/courses", to: "pages#courses"
 
     devise_scope :user do
       get 'login', to: 'devise/sessions#new'

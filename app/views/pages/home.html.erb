@@ -4,24 +4,22 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        <h1 class="title">Used Textbooks Simplified</h1>
-        <h4>
-          Stop wasting $$$ and start saving time.
-          <% if !(user_signed_in?)%>
-          Sign up or log in!<% end %>
-        </h4>
+        <h1 class="title">Textbooks Simplified</h1>
+        <h2>
+          Cutting out the middle man and saving college students $$$ on books!
         <% if !(user_signed_in?) %>
+        Come join us.
+        </h2>
         <br>
         <%= link_to signup_path,  class: "btn btn-success btn-lg" do %>
         <i class="material-icons">person_add</i>Sign Up
         <% end %>
-        <%= link_to login_path,  class: "btn btn-primary btn-lg" do %>
-        <i class="material-icons">account_circle</i>Login
-        <% end %>
-        <% elsif user_signed_in? %>
-        <br>
         <a href="#scrollHome" rel="relanchor" class="btn btn-primary btn-lg">Learn More</a>
-        <%= link_to "Create Listing", new_listing_path, class: "btn btn-success btn-lg" %>
+        <% end %>
+        <% if user_signed_in? %>
+        <br />
+        <%= link_to "Post Book", new_listing_path, class: "btn btn-success btn-lg" %>
+        <%= link_to "Find Books", courses_path, class: "btn btn-primary btn-lg" %>
         <% end %>
       </a>
     </div>
@@ -106,38 +104,15 @@
         <div class="col-md-8 col-md-offset-2">
         <h2 class="text-center title">Work with us</h2>
         <h4 class="text-center description">
-          Want to make college more affordable at your school? Contact us about becoming a part of the List Overflow team and we will set up a time to talk.
+          Want to make college more affordable at your school? Have suggestions
+          about how we can make List Overflow work better for you?
+          Let's get in touch! Just click that button below.
         </h4>
-        <form class="contact-form">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group label-floating is-empty">
-                <label class="control-label">Your Name</label>
-                <input class="form-control">
-                <span class="material-input"></span>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group label-floating is-empty">
-                <label class="control-label">Your Email</label>
-                <input type="email" class="form-control">
-                <span class="material-input"></span>
-              </div>
-            </div>
+        <div class="center">
+            <%= link_to "http://bit.ly/2CmrA2c", target: "_blank" do %>
+              <button class="btn btn-primary btn-raised">Contact</button>
+            <% end %>
           </div>
-          <div class="form-group label-floating is-empty">
-            <label class="control-label">University/College</label>
-            <input class="form-control">
-            <span class="material-input"></span>
-          </div>
-          <div class="row">
-            <div class="col-md-4 col-md-offset-4 text-center">
-              <button class="btn btn-primary btn-raised">
-                Send Message
-              </button>
-            </div>
-          </div>
-        </form>
       </div>
     </div>
     </div>

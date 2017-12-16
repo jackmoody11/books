@@ -1,7 +1,10 @@
 class Listing < ApplicationRecord
   belongs_to :user
   has_many :listing_categories
-  has_many :categories, through: :listing_categories
+  has_many :listing_courses
+  has_many :course_listings
+  has_many :courses, through: :course_listings, dependent: :destroy
+  has_many :categories, through: :listing_categories, dependent: :destroy
   validates :title, presence: true
   validates :condition, presence: true
   validates_inclusion_of :condition, in: ["New", "Used - Like New", "Used - Very Good", "Used - Good", "Used - Acceptable"], presence: true

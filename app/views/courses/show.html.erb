@@ -1,0 +1,13 @@
+<h1 align="center" class="title"><%= @course.shortname %></h1>
+<div align="center">
+<% if user_signed_in? && current_user.admin? %>
+  <div class="row">
+    <span class="label label-default"><%= link_to "Edit course", edit_course_path(@course) %></span>
+  </div>
+<% end %>
+  <%= will_paginate @course_listings %>
+</div>
+ <%= render 'card' %>
+ <div align="center">
+  <%= will_paginate @course_listings %>
+</div>

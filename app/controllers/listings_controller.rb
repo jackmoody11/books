@@ -44,7 +44,7 @@ class ListingsController < ApplicationController
 
   private
     def listing_params
-      params.require(:listing).permit(:title,:condition,:price,:description,:isbn,:image, category_ids: [])
+      params.require(:listing).permit(:title,:condition,:price,:description,:isbn,:image,:courses, category_ids: [], course_ids: [])
     end
 
     def set_listing

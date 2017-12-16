@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="col-md-10 col-md-offset-2">
+    <h1 class="title">Courses</h1>
+    <% @categories.all.order('name ASC').each do |category| %>
+      <h3><%= link_to category.name, category_path(category.id) %></h3>
+      <ul>
+        <% category.courses.each do |course| %>
+        <%= link_to course_path(course) do %><li><b><%= course.shortname %></b> <%= course.description%></li><% end %>
+        <% end %>
+      </ul>
+      <hr />
+    <% end %>
+  </div>
+</div>

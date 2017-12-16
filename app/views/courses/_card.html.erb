@@ -1,4 +1,4 @@
-<% @category_listings.each_slice(3) do |list_row| %>
+<% @course_listings.each_slice(3) do |list_row| %>
 <div class="row">
     <% list_row.each do |listing| %>
     <div class="col-md-4">
@@ -28,7 +28,7 @@
             </div>
             <div class="col-md-6">
               <p class="card-description">
-                <%= listing.condition %>
+                <%= truncate(listing.author, length: 25) if listing.author %><%= listing.condition %>
               </p>
           </div>
         </div>

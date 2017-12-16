@@ -11,7 +11,7 @@
 	                            <%= gravatar_for @user, size: 150, class: "img-circle img-responsive img-raised" %>
 	                        </div>
 	                        <div class="name">
-	                            <h3 class="title"><%= @user.first_name + " " + @user.last_name %></h3>
+	                            <h3 class="title"><%= @user.first_name + " " + @user.last_name if @user.first_name && @user.last_name%></h3>
 															<% if @user.grad_year %>
 																<h6>Graduates in <%= @user.grad_year %></h6>
 															<% end %>
@@ -41,7 +41,7 @@
 									<li class="active">
                     <a href="#work" role="tab" data-toggle="tab">
 											<i class="material-icons">reorder</i>
-											Listings
+											Listings (<%= @user.listings.count %>)
                     </a>
 			             </li>
 			           </ul>
@@ -68,7 +68,7 @@
 				                    <!-- <li><b>1.2K</b> Likes</li> -->
 				                	</ul>
 				                	<hr />
-
+												<% if @user.categories.count > 0 %>
 													<h4 class="title">Subjects</h4>
 													<% @user.categories.distinct.each do |category| %>
 													<li class="category-list">
@@ -77,8 +77,9 @@
 														<% end %>
 													</li>
 												<% end %>
-												<hr \>
-												<% if current_user == @user || current_user.admin? %>
+												<hr>
+												<% end %>
+												<% if (current_user == @user || current_user.admin?) && current_user.listings.count > 0 %>
 												<h4 class="title">Edit/Delete Postings</h4>
 												<%= render 'table' %>
 												<% end %>
