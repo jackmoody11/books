@@ -44,17 +44,20 @@
         <%= f.label "Department(s)" %>
       </div>
         <div class="col-sm-8">
-          <%= f.collection_select(:category_ids, Category.all.order('name ASC'), :id, :name,{ ":data-live-search" => "true", ":data-style" => "form-control", ":data-size": 5}, {class: "selectpicker", title: "Choose Department(s)", multiple: true, :"data-max-options" => "3"}) %>
+          <%= f.collection_select(:category_ids, Category.all.order('name ASC'), :id, :shortname,{ ":data-style" => "form-control", ":data-size": 5}, {class: "selectpicker", "data-live-search": true,  title: "Choose Department(s)", multiple: true, :"data-max-options" => "3"}) %>
         </div>
     </div>
+    <!-- Only show after category has been filled in-->
     <div class="form-group">
       <div class="control-label col-sm-2">
         <%= f.label "Class(es)" %>
       </div>
         <div class="col-sm-8">
-          <%= f.collection_select(:course_ids, Course.all.order('shortname ASC'), :id, :shortname,{:"data-style" => "form-control", :"data-size" => 5}, {class: "selectpicker", title: "Choose Class(es)", multiple: true, :"data-max-options" => "3"}) %>
+          <%= f.collection_select(:course_ids, Course.all.order('shortname ASC'), :id, :shortname,{"data-style": "form-control", :"data-size" => 5}, {class: "selectpicker", title: "Choose Class(es)","data-live-search": true, multiple: true, :"data-max-options" => "3"}) %>
         </div>
     </div>
+    <!-- End course select -->
+    <!--Begin price -->
     <div class="form-group">
       <div class="control-label col-sm-2">
         <%= f.label :price do %>
@@ -65,6 +68,7 @@
         <%= f.text_field :price , class: "form-control" , placeholder: "Price (in $USD)" %>
       </div>
     </div>
+    <!--End price -->
     <div class="form-group">
         <div class="control-label col-sm-2">
           <%= f.label :description  %>
