@@ -30,6 +30,8 @@ gem 'puma', '~> 3.7'
 gem 'uglifier', '>= 1.3.0'
 # Add ISBN lookup
 gem 'vacuum', '~> 2.0', '>= 2.0.2'
+# Add web scraping gems
+gem 'nokogiri', '~> 1.8', '>= 1.8.1'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 # Add controller test
