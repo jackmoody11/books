@@ -1,16 +1,18 @@
 <div class="container">
   <div class="col-md-10 col-md-offset-2">
     <h1 class="title">Courses</h1>
-    <% @categories.all.order('name ASC').each do |category| %>
-      <h3><%= link_to category.name, category_path(category.id) %></h3>
-      <ul>
-        <% category.courses.each do |course| %>
-        <% if !course.listings.empty? %>
-        <%= link_to course_path(course) do %><li><b><%= course.shortname %></b> <%= course.description%></li><% end %>
-        <% end %>
-        <% end %>
-      </ul>
-      <hr />
-    <% end %>
+    <% @categories.all.order('name ASC').each do |category| # Loop through categories %>
+      <% if !category.listings.empty? # Check if category is empty %>
+        <h3><%= link_to category.name, category_path(category.id) %></h3>
+        <ul>
+          <% category.courses.each do |course| %>
+            <% if !course.listings.empty? # Check if course has listings %>
+              <%= link_to course_path(course) do %><li><b><%= course.shortname %></b> <%= course.description%></li><% end %>
+            <% end # End course.empty? check%>
+          <% end # End course loop for category %>
+        </ul>
+        <hr>
+        <% end # End category.empty? check %>
+    <% end # End loop through categories %>
   </div>
 </div>

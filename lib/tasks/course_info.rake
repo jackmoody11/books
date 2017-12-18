@@ -1,4 +1,4 @@
-desc "Fetch Course Info"
+desc "Fetch Course Info - Run rake fetch_categories before running rake fetch_courses"
 task :fetch_courses => :environment do
   require "nokogiri"
   require "open-uri"
