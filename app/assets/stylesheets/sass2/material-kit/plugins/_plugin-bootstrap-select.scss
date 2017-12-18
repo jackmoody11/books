@@ -4,7 +4,7 @@
  * Copyright 2013-2016 bootstrap-select
  * Licensed under MIT (https://github.com/silviomoreto/bootstrap-select/blob/master/LICENSE)
  */
-
+ $brand-primary: $blue-500 !default;
 select.bs-select-hidden,
 select.selectpicker {
   display: none !important;
