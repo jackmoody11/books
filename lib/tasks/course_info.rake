@@ -18,7 +18,7 @@ task :fetch_courses => :environment do
       # if course does not exist yet, add it
       if Course.where(shortname: course_shortname).empty?
         Course.create(shortname: course_shortname, description: course_description, category_ids: category.id)
-        puts "Added #{course_shortname} to courses!"
+        puts "Added #{course_shortname} to courses with category: #{category.id}!"
       else
         puts "#{course_shortname} already exists!"
       end
