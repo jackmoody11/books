@@ -366,7 +366,7 @@
     multipleSeparator: ', ',
     styleBase: 'btn',
     style: 'btn-default',
-    size: 'auto',
+    size: '8',
     title: null,
     selectedTextFormat: 'values',
     width: false,
