@@ -378,7 +378,7 @@
     dropupAuto: false,
     header: false,
     liveSearch: false,
-    liveSearchPlaceholder: null,
+    liveSearchPlaceholder: "Search...",
     liveSearchNormalize: false,
     liveSearchStyle: 'contains',
     actionsBox: false,
