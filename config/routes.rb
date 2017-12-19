@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :users
   resources :categories
   resources :courses
+  resources :personal_messages, only: [:create, :new]
+  resources :conversations, only: [:index, :show]
   root 'pages#home'
   get "/about", to: "pages#about"
   get "/contact", to: "pages#contact"

@@ -55,7 +55,7 @@
                   <div class="author">
                     <%= link_to user_path(@listing.user) do %>
                       <%= small_gravatar_for @listing.user,size: 40, class: "img-circle img-responsive img-raised", align: "left" %>
-                      <span><%= @listing.user.first_name + " " + @listing.user.last_name %></span>
+                      <span><%= @listing.user.first_name + " " + @listing.user.last_name if @listing.user.first_name && @listing.user.last_name %></span>
                       <% end %>
                   </div>
               </div>
@@ -69,6 +69,8 @@
                   <%= link_to listing_path(@listing), method: :delete, data: {confirm: 'Are you sure you want to delete this listing?'} do %>
                     <button class="btn btn-danger">Delete</button>
                   <% end %>
+                  <% else %>
+                    <%= link_to 'send a message', new_personal_message_path(receiver_id: @user.id) %>
                 <% end %>
               </div>
             </div>

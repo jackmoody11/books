@@ -1,0 +1,20 @@
+<h1 class="title"><%= small_gravatar_for(current_user) %> <%= @conversation.with(current_user).nickname %></h1>
+
+
+<div class="card">
+  <div class="container">
+    <%= render @conversation.personal_messages %>
+  </div>
+
+  <%= form_for @personal_message do |f| %>
+    <%= hidden_field_tag 'conversation_id', @conversation.id %>
+    <div class="form-group">
+        <div class="col-sm-8 col-sm-offset-1">
+          <%= f.text_area :body , rows:3, class: "form-control", placeholder: "Your Message..." %>
+        </div>
+        <div class="col-sm-3">
+          <%= f.submit "Send", class: "btn btn-primary btn-md" %>
+        </div>
+      </div>
+  <% end %>
+</div>
