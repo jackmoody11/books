@@ -7,7 +7,6 @@ class ConversationsController < ApplicationController
   end
 
   def show
-    @conversation = Conversation.find_by(id: params[:id])
     @personal_message = PersonalMessage.new
   end
 

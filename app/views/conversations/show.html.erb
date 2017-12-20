@@ -1,5 +1,8 @@
-<h1 class="title"><%= small_gravatar_for(current_user) %> <%= @conversation.with(current_user).nickname %></h1>
-
+<%= link_to user_path(@conversation.with(current_user)) do %>
+  <h1 class="title center">
+    <%= small_gravatar_for(@conversation.with(current_user)) %> <%= @conversation.with(current_user).nickname %>
+  </h1>
+<% end %>
 
 <div class="card">
   <div class="container">
