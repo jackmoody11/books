@@ -70,7 +70,9 @@
                     <button class="btn btn-danger">Delete</button>
                   <% end %>
                   <% else %>
-                    <%= link_to 'send a message', new_personal_message_path(receiver_id: @user.id) %>
+                        <%= link_to new_personal_message_path(receiver_id: @user.id) do %>
+                        <button class="btn btn-md btn-primary">Send Message</button>
+                        <% end %>
                 <% end %>
               </div>
             </div>

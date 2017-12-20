@@ -1,8 +1,9 @@
 <div>
-  Chatting with <%= conversation.with(current_user).nickname %>
+<%= link_to conversation_path(conversation) do %>
+  <%= small_gravatar_for(current_user, size: 30) %> <b><%= conversation.with(current_user).nickname %></b>
   <br>
   <em><%= conversation.personal_messages.last.body.truncate(50) %></em>
   <br>
-  <%= link_to 'View conversation', conversation_path(conversation) %>
   <hr>
+<% end %>
 </div>
