@@ -7,3 +7,8 @@ $(document).ready(function() {
 	    return false;
 	});
 });
+
+// First round prevention of double submission
+$('form').submit(function(){
+    $('input[type=submit]', this).attr('disabled', 'disabled');
+});

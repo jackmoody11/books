@@ -26,7 +26,9 @@ class CategoryTest < ActiveSupport::TestCase
   end
 
   test "name should not be too long" do
-    category5 = Category.new(name: "waytoolongforacategory")
+    category5 = Category.new(name: "waytoolongforacategoryblablablablablablablablablablabla
+                                    blablablablablablablablablablablablabla
+                                    blablablablablablablablablablablablabla")
     assert_not category5.valid?
   end
 
