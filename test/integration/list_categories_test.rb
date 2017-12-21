@@ -1,5 +1,6 @@
 require 'test_helper'
 class ListCategoriesTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
 
   def setup
     @category = Category.new(name: "sports")
