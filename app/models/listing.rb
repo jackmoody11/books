@@ -61,7 +61,7 @@ class Listing < ApplicationRecord
     newPriceLow = newPriceLow ? newPriceLow / 100 : nil
     usedPriceLow = usedPriceLow ? usedPriceLow / 100 : nil
     return {title: title, author: author, manufacturer: manufacturer,
-            url: url, newPrice: newPrice, newTradeIn: newTradeIn,
+            url: url, newTradeIn: newTradeIn,
             newPrice: newPrice, newPriceLow: newPriceLow, usedPriceLow: usedPriceLow,
             allOffersUrl: allOffersUrl}
   end
