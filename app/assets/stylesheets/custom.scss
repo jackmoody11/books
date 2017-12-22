@@ -68,21 +68,14 @@ footer{
       color:$main-black;
     }
 
-  #footer-left{
-    float: left;
-  }
-  #footer-right{
-    float: right;
-  }
-
-    ul{
-      list-style:none;
-      float:right;
-      li{
-        float:left;
-        margin-left:15px;
-      }
+  ul{
+    list-style:none;
+    float:right;
+    li{
+      float:left;
+      margin-left:15px;
     }
+  }
 }
 
 li{
