@@ -13,21 +13,25 @@ class ListingTest < ActiveSupport::TestCase
     @invalid_listing_user = Listing.new(title: "Valid Title", price: 123, condition: "Used - Like New")
   end
 
-  test "successfully create listing" do
-    assert @valid_listing.save, "valid listing does not save for normal users"
+  test 'successfully create listing' do
+    assert @valid_listing.save,
+           'valid listing does not save for normal users'
   end
 
-  test "listing without price does not save" do
-    assert_not @invalid_listing_price.save, "listing without price saves"
+  test 'listing without price does not save' do
+    assert_not @invalid_listing_price.save,
+                'listing without price saves'
   end
 
-  test "listing without title does not save" do
-    assert_not @invalid_listing_title.save, "listing without title saves"
+  test 'listing without title does not save' do
+    assert_not @invalid_listing_title.save, 'listing without title saves'
   end
 
-  test "listing without condition does not save" do
-    assert_not @invalid_listing_condition.save,  "listing without acceptable condition saves"
-    assert_not @listing_no_condition.save, "listing with no condition saves"
+  test 'listing without condition does not save' do
+    assert_not @invalid_listing_condition.save,
+               'listing without acceptable condition saves'
+    assert_not @listing_no_condition.save,
+               'listing with no condition saves'
   end
 
   test "listing without user does not save" do

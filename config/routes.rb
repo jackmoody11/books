@@ -13,6 +13,15 @@ Rails.application.routes.draw do
   get "/terms", to: "pages#terms"
   get "/privacy", to: "pages#privacy"
 
+  # Add lookup
+  # resources :listings do
+  #   collection do
+  #     get :lookup
+  #   end
+  # end
+
+  # get "my-search-url", to: "listings#search", as: "my_search_url"
+
     devise_scope :user do
       get 'login', to: 'devise/sessions#new'
       post 'login', to: 'devise/sessions#create'
