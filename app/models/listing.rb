@@ -63,7 +63,7 @@ class Listing < ApplicationRecord
     return {title: title, author: author, manufacturer: manufacturer,
             url: url, newTradeIn: newTradeIn,
             newPrice: newPrice, newPriceLow: newPriceLow, usedPriceLow: usedPriceLow,
-            allOffersUrl: allOffersUrl}
+            allOffersUrl: allOffersUrl, isbn: val}
   end
 
 
