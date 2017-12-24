@@ -26,7 +26,7 @@
 	                	</div>
 									-->
                 </div>
-
+								<% if @user.listings.count > 0 %>
                 <div class="description text-center">
 									<% if @user.summary %>
 										<p><%= @user.summary %></p>
@@ -93,6 +93,17 @@
 	                 </div>
 			        	</div>
 			    		</div>
+							<% else %>
+							<div class="container no-listings">
+								<h5 class="center">Currently no listings.
+									<% if @user == current_user %>
+										<%= link_to new_listing_path do %>
+												Click here to add a book.
+										<% end %>
+									<% end %>
+								</h5>
+							</div>
+							<% end %>
 
             </div>
         	</div>
