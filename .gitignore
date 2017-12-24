@@ -24,3 +24,6 @@
 sendgrid.env
 
 public/uploads
+/db/seeds.rb
+
+/config/database.yml
