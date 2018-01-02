@@ -22,13 +22,13 @@
               <%= link_to user_path(listing.user) do %>
                 <div class="author">
                     <%= small_gravatar_for listing.user, class: "img-circle img-responsive img-raised", align: "left" %>
-                       <span><%= listing.user.first_name + " " + listing.user.last_name %></span>
+                       <span><%= show_full_name(listing) %></span>
                 </div>
                 <% end %>
               </div>
               <div class="col-md-6">
                 <p class="card-description">
-                  <%= truncate(listing.author, length: 25) if listing.author %><%= listing.condition %>
+                  <%= show_author(listing) %><%= listing.condition %>
             		</p>
             </div>
           </div>
