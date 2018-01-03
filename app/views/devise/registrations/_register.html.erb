@@ -96,12 +96,10 @@
                   <span class="material-input"></span>
                 </div>
               </div>
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox" name="optionsCheckboxes" checked="">
-                  <span class="checkbox-material"></span>
-                  I agree to the <%= link_to terms_path do %>terms and conditions<% end %>.
-                </label>
+              <div class="form-group">
+                <p align="center">
+                  By signing up, you agree to the <%= link_to terms_path do %><u>terms and conditions</u><% end %>.
+                </p>
               </div>
             </div>
 
@@ -109,7 +107,9 @@
                 <%= f.submit t('.sign_up', default: 'Sign up'), class: 'btn btn-primary btn-round' %>
               </div>
             <% end %>
-            <%= render '/devise/shared/links' %>
+            <div class="container">
+              <%= render '/devise/shared/links' %>
+            </div>
            </div>
          </div>
         </div>
