@@ -5,7 +5,7 @@ class ImageUploader < CarrierWave::Uploader::Base
     process resize_to_limit: [800, 800]
 
     version :thumb do
-      process resize_to_limit: [200,200]
+      process resize_to_limit: [500,500]
     end
     version :card do
       process resize_to_limit: [360,240]

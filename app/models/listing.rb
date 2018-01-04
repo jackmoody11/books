@@ -16,6 +16,7 @@ class Listing < ApplicationRecord
                    numericality: {greater_than_or_equal_to: 999999999, less_than_or_equal_to: 9999999999999}
 
   mount_uploader :image, ImageUploader
+  validates_size_of :image, maximum: 10.megabyte, message: "Attachment size exceeds the allowable limit (10 MB)."
 
   # Add basic search
   def self.search(search)
