@@ -2,13 +2,13 @@ class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
   include Sprockets::Rails::Helper
 
-    process resize_to_limit: [800, 800]
+    process resize_to_fill: [800, 800]
 
     version :thumb do
-      process resize_to_limit: [500,500]
+      process resize_to_fill: [500,500]
     end
     version :card do
-      process resize_to_limit: [360,240]
+      process resize_to_fill: [360,240]
     end
 
   # Choose what kind of storage to use for this uploader:
