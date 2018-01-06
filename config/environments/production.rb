@@ -3,6 +3,11 @@ Rails.application.configure do
 
   # Code is not reloaded between requests.
   config.cache_classes = true
+  # Add caching : https://stackoverflow.com/questions/41741688/how-to-leverage-browser-caching-in-rails-4
+  config.public_file_server.headers = {
+  'Cache-Control' => 'public, s-maxage=31536000, maxage=15552000',
+  'Expires' => "#{1.year.from_now.to_formatted_s(:rfc822)}"
+}
 
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
