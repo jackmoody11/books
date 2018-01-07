@@ -5,16 +5,11 @@
  * Licensed under MIT (https://github.com/silviomoreto/bootstrap-select/blob/master/LICENSE)
  */
 
-
  /*
-
-
       Creative Tim Modifications
 
       Line: 384-385 - we changed glyphicons with material-icons.
       Line: 599 - we put tickIcon inside of span tag.
-
-
  */
 
 (function (root, factory) {
@@ -366,7 +361,7 @@
     multipleSeparator: ', ',
     styleBase: 'btn',
     style: 'btn-default',
-    size: '8',
+    size: 8,
     title: null,
     selectedTextFormat: 'values',
     width: false,
@@ -388,7 +383,7 @@
     template: {
       caret: '<span class="caret"></span>'
     },
-    maxOptions: false,
+    maxOptions: 3,
     mobile: false,
     selectOnTab: false,
     dropdownAlignRight: false,

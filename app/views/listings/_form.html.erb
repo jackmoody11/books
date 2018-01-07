@@ -54,7 +54,7 @@
         <%= f.label "Class(es)" %>
       </div>
         <div class="col-sm-8">
-          <%= f.collection_select(:course_ids, Course.all.order('shortname ASC'), :id, :shortname,{"data-style": "form-control", :"data-size" => 5}, {class: "selectpicker bigcontainer", title: "Choose Class(es)","data-live-search": true, multiple: true, :"data-max-options" => "3"}) %>
+          <%= f.collection_select(:course_ids, Course.all.order('shortname ASC'), :id, :shortname,{"data-style": "form-control"}, {class: "selectpicker", title: "Choose Class(es)","data-live-search": true, multiple: true}) %>
         </div>
     </div>
     <!-- End course select -->
