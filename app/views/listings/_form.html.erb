@@ -45,7 +45,7 @@
         <%= f.label "Department(s)" %>
       </div>
         <div class="col-sm-8">
-          <%= f.collection_select(:category_ids, Category.all.order('name ASC'), :id, :shortname,{ ":data-style" => "form-control", ":data-size": 5}, {class: " form-control selectpicker", "data-live-search": true,  title: "Choose Department(s)", multiple: true, :"data-max-options" => "3"}) %>
+          <%= f.collection_select(:category_ids, Category.all.order('name ASC'), :id, :shortname,{ ":data-style" => "form-control", ":data-size": 5}, {class: 'form-control selectpicker',id: 'category-select', "data-live-search": true,  title: "Choose Department(s)", multiple: true, :"data-max-options" => "3"}) %>
         </div>
     </div>
     <!-- Only show after category has been filled in-->
