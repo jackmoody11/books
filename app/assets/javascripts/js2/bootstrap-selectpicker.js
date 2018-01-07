@@ -384,7 +384,7 @@
       caret: '<span class="caret"></span>'
     },
     maxOptions: 3,
-    mobile: false,
+    mobile: true,
     selectOnTab: false,
     dropdownAlignRight: false,
     windowPadding: 0

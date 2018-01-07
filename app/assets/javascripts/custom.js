@@ -12,8 +12,3 @@ $(document).ready(function() {
 $('form').submit(function(){
     $('input[type=submit]', this).attr('disabled', 'disabled');
 });
-
-// Mobile friendly
-if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
-  $('.selectpicker').selectpicker('mobile');
-}
