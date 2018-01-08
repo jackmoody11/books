@@ -340,7 +340,6 @@
   };
 
   Selectpicker.VERSION = '1.11.2';
-
   // part of this is duplicated in i18n/defaults-en_US.js. Make sure to update both.
   Selectpicker.DEFAULTS = {
     noneSelectedText: 'Nothing selected',
@@ -384,7 +383,7 @@
       caret: '<span class="caret"></span>'
     },
     maxOptions: 3,
-    mobile: true,
+    mobile: false,
     selectOnTab: false,
     dropdownAlignRight: false,
     windowPadding: 0
