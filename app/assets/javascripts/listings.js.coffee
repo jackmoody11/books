@@ -1,5 +1,5 @@
  jQuery ->
-  $('#listing_course_ids').parent().parent().hide() # Hides entire form group
+  $('#listing_course_ids').parent().parent().parent().hide() # Hides entire form group
   courses = $('#listing_course_ids').html()
   $('#listing_category_ids').change ->
     categories = []
