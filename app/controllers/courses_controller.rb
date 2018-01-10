@@ -2,7 +2,7 @@ class CoursesController < ApplicationController
   before_action :require_admin, except: [:index, :show]
   before_action :set_course, only: [:edit, :update, :destroy, :show]
   def index
-    @categories = Category.all
+    @categories = Category.all.includes(:listings)
     @course = Course.paginate(page: params[:page], per_page: 15)
   end
 
