@@ -2,12 +2,18 @@
 
 <%= render "shared/errors", obj: @user %>
 <div class="row">
-  <div class="col-md-12 col-md-offset-2">
-    <a href="https://en.gravatar.com" target="_blank">Change your profile picture</a>
+  <div class="col-md-8 col-md-offset-2">
+    <a href="https://en.gravatar.com" target="_blank"><h5>Change your profile picture</h5></a>
   </div>
 </div>
-<div class="row">
-  <div class="col-md-12">
+<br />
+
+<div class="container-fluid">
+<div class="col-md-8 col-md-offset-2">
+  <div class="card">
+    <div class="header header-raised header-primary text-center">
+        <h4 class="card-title">Edit Profile</h4>
+    </div>
     <%= form_for(@user, :html => {class: "form-horizontal" , role: "form"}) do |f| %>
       <div class="form-group">
         <div class="control-label col-sm-2">
@@ -73,4 +79,5 @@
       </div>
     <%end%>
   </div>
+</div>
 </div>
