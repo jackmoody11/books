@@ -7,13 +7,14 @@ task fetch_courses: :environment do
     shortname = category.shortname.downcase
     url = "http://www.catalog.unc.edu/courses/#{CGI.escape(shortname)}"
     doc = Nokogiri::HTML(open(url))
-  course_titles = {}
+    course_titles = {}
     i = 0
     doc.css(".courseblocktitle strong").each do |title|
       # Retrieve information
       course_shortname = title.text[/^([^.]+)/]
       course_description = title.text[/\A[^.]*\.\s\K[^.]*(?=\.)/]
-      course_titles[[i, 1]] = course_shortname
+      # Replace &nbsp; with normal blank space
+      course_titles[[i, 1]] = course_shortname.gsub!(160.chr("UTF-8")," ")
       course_titles[[i, 2]] = course_description
       # if course does not exist yet, add it
       if Course.where(shortname: course_shortname).empty?
