@@ -4,9 +4,9 @@
   </h1>
 <% end %>
 
-<div class="card">
+<div class="card" id="conversation-body" data-conversation-id="<%= @conversation.id %>">
   <div class="container">
-    <%= render @conversation.personal_messages %>
+      <%= render @conversation.personal_messages %>
   </div>
 
   <%= form_for @personal_message do |f| %>

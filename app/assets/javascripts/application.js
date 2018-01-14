@@ -13,4 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require js2/moment.min.js
+//= require cable
 //= require_tree .
