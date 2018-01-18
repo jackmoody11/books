@@ -2,11 +2,13 @@ require 'test_helper'
 
 class CategoryTest < ActiveSupport::TestCase
   def setup
-    @category = Category.new(name: "Mathematics", shortname: "MATH")
-    @name_too_long = Category.new(name: "waytoolongforacategoryblablablablablablablablablablabla
-                                    blablablablablablablablablablablablabla
-                                    blablablablablablablablablablablablabla", shortname: "ABC")
-    @name_too_short = Category.new(name: "io", shortname: "IO")
+    @category = Category.new(name: 'Mathematics', shortname: 'MATH')
+    @name_too_long = Category.new(name: 'waytoolongforacategory
+                                  blablablablablablablablablablabla
+                                  blablablablablablablablablablablablabla
+                                  blablablablablablablablablablablablabla',
+                                  shortname: 'ABC')
+    @name_too_short = Category.new(name: 'io', shortname: 'IO')
   end
 
   test 'category should be valid' do
@@ -14,13 +16,13 @@ class CategoryTest < ActiveSupport::TestCase
   end
 
   test 'category should be present' do
-    @category.name = " "
+    @category.name = ' '
     assert_not @category.valid?
   end
 
   test 'name should be unique' do
     @category.save
-    category2 = Category.new(name: "Mathematics", shortname: "MATH")
+    category2 = Category.new(name: 'Mathematics', shortname: 'MATH')
     assert_not category2.valid?
   end
 
@@ -31,5 +33,4 @@ class CategoryTest < ActiveSupport::TestCase
   test 'name should not be too long' do
     assert_not @name_too_long.valid?
   end
-
 end

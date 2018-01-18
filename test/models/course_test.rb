@@ -5,5 +5,4 @@ class CourseTest < ActiveSupport::TestCase
     @admin = users(:one)
     @not_admin = users(:two)
   end
-
 end
