@@ -1,3 +1,4 @@
+# Adds CarrierWave Image Uploader to App
 class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
   include Sprockets::Rails::Helper
@@ -5,10 +6,11 @@ class ImageUploader < CarrierWave::Uploader::Base
     process resize_to_fill: [800, 800]
 
     version :thumb do
-      process resize_to_fill: [500,500]
+      process resize_to_fill: [500, 500]
     end
+
     version :card do
-      process resize_to_fill: [360,240]
+      process resize_to_fill: [360, 240]
     end
 
   # Choose what kind of storage to use for this uploader:
@@ -50,5 +52,4 @@ class ImageUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
-
 end
