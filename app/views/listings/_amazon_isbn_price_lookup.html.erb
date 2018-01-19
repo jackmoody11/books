@@ -1,0 +1,18 @@
+<!-- <% if @amazon_isbn_lookup_result[:title] %>
+  <h1>Amazon</h1>
+  <a href="<%=@amazon_isbn_lookup_result[:allOffersUrl]%>" target="_blank">
+      <p>New Price: $<%= @amazon_isbn_lookup_result[:newPrice] %></p>
+  </a>
+  <a href="<%=@amazon_isbn_lookup_result[:allOffersUrl]%>" target="_blank">
+      <p>Lowest Price New: $<%= @amazon_isbn_lookup_result[:newPriceLow] %></p>
+  </a>
+  <a href="<%=@amazon_isbn_lookup_result[:allOffersUrl]%>" target="_blank">
+      <p>New Trade In: $<%= @amazon_isbn_lookup_result[:newTradeIn] %></p>
+  </a>
+  <a href="<%=@amazon_isbn_lookup_result[:allOffersUrl]%>" target="_blank">
+      <p>Used Price Low: $<%= @amazon_isbn_lookup_result[:usedPriceLow] %></p>
+  </a>
+<% end %>
+<% if !@amazon_isbn_lookup_result[:title] &&  @amazon_isbn_lookup_result %>
+  <h3>This doesn't seem like a valid ISBN (According to Amazon)</h3>
+<% end %> -->

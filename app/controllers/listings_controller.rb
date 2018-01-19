@@ -2,6 +2,16 @@ class ListingsController < ApplicationController
  before_action :set_listing, only: [:edit, :update, :destroy, :show]
  before_action :require_same_user, only: [:edit, :update, :destroy]
 
+  # def lookup
+  #  @listing = Listing.new
+  #  @lookup_result = Listing.amazon_lookup(params[:isbn])
+  #  render partial: 'isbn_lookup_result'
+  # end
+
+  # def price_lookup
+  #   @amazon_isbn_lookup_result = Listing.amazon_lookup(params[:isbn])
+  # end
+
   def new
     @listing = Listing.new
   end
@@ -22,7 +32,6 @@ class ListingsController < ApplicationController
   end
 
   def show
-    @listing = Listing.find(params[:id])
     @user = @listing.user
   end
 

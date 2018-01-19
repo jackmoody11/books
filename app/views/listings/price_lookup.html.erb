@@ -1,0 +1,16 @@
+<!-- <%= form_tag "#", method: :get, id: "book-lookup-form" do %>
+    <div class="form-group row no-padding text-center col-md-12">
+      <div class="col-md-10">
+        <%= text_field_tag :isbn, params[:isbn],
+                                  placeholder: 'ISBN (10 or 13 digits - no dashes)',
+                                  autofocus: true,
+                                  class: 'form-control' %>
+      </div>
+      <div class="col-md-2">
+        <%= button_tag(type: :submit, class: 'btn btn-lg btn-success', id: 'book-search') do %>
+          <i class="fa fa-search"></i> Look up prices
+        <% end %>
+      </div>
+    </div>
+<% end %>
+<%= render 'amazon_isbn_price_lookup' %> -->
