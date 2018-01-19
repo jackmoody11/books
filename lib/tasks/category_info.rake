@@ -2,7 +2,7 @@ desc 'Fetch Categories - Run before rake fetch_courses'
 task fetch_categories: :environment do
   require 'nokogiri'
   require 'open-uri'
-    url = "http://www.catalog.unc.edu/courses"
+    url = 'http://www.catalog.unc.edu/courses'
     doc = Nokogiri::HTML(open(url))
     category_names = {}
     i = 0

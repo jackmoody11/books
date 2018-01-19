@@ -7,7 +7,7 @@ Rails.application.configure do
   config.public_file_server.headers = {
   'Cache-Control' => 'public, s-maxage=31536000, maxage=15552000',
   'Expires' => "#{1.year.from_now.to_formatted_s(:rfc822)}"
-}
+                                      }
 
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
@@ -15,7 +15,8 @@ Rails.application.configure do
   # Rake tasks automatically ignore this option for performance.
   config.eager_load = true
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { host: 'listoverflow.herokuapp.com', :protocol => 'https'}
+  config.action_mailer.default_url_options = { host: 'listoverflow.herokuapp.com',
+                                               protocol: 'https'}
 
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
@@ -87,7 +88,7 @@ Rails.application.configure do
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
 
-  if ENV["RAILS_LOG_TO_STDOUT"].present?
+  if ENV['RAILS_LOG_TO_STDOUT'].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
     logger.formatter = config.log_formatter
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
