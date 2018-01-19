@@ -28,7 +28,7 @@ class UsersController < ApplicationController
     def update
       if @user.update(user_params)
         bypass_sign_in(@user)
-        flash[:success] = "Your account was updated successfully"
+        flash[:success] = 'Your account was updated successfully'
         redirect_to listings_path
       else
         render 'edit'
@@ -42,14 +42,18 @@ class UsersController < ApplicationController
     def destroy
       @user = User.find(params[:id])
       @user.destroy
-      flash[:danger] = "User and all articles created by user have been deleted."
+      flash[:danger] = 'User and all articles created by user have been deleted.'
       redirect_to users_path
     end
 
     private
-    def user_params
-      params.require(:user).permit(:username, :email, :password, :first_name, :last_name, :summary, :grad_year)
-    end
+      def user_params
+        params.require(:user).permit(:username, :email,
+                                     :password, :first_name,
+                                     :last_name, :summary,
+                                     :grad_year
+                                    )
+      end
 
       def set_user
         @user = User.find(params[:id])

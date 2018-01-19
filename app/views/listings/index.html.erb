@@ -1,24 +1,24 @@
-<h1 align="center" class="title">All Books</h1>
+<h1 align='center' class='title'>All Books</h1>
 
 <!-- Search -->
-<div class="row">
-    <div class="col-xs-4 col-xs-offset-4" align="center">
-  		<div class="input-group">
-      <%= form_tag listings_path, method: :get, id: "listings_search" do %>
-			<div class="form-group is-empty">
-        <%= text_field_tag :search, params[:search], class: "form-control", type: "text", placeholder: "Search", autofocus: true %>
-        <span class="material-input"></span>
+<div class='row'>
+    <div class='col-xs-4 col-xs-offset-4' align='center'>
+  		<div class='input-group'>
+      <%= form_tag listings_path, method: :get, id: 'listings_search' do %>
+			<div class='form-group is-empty'>
+        <%= text_field_tag :search, params[:search], class: 'form-control', type: 'text', placeholder: 'Search', autofocus: true %>
+        <span class='material-input'></span>
       </div>
   </div>
 	</div>
 </div>
 
-<div id="listings">
+<div id='listings'>
   <%= render 'card' %>
 </div>
 
 <% end %>
 
-<div align="center" class="row">
-  <%= will_paginate @listing, previous_label: "&larr;", next_label: "&rarr;" %>
+<div align='center' class='row'>
+  <%= will_paginate @listing, previous_label: '&larr;', next_label: '&rarr;' %>
 </div>
