@@ -13,6 +13,13 @@ class PersonalMessagesController < ApplicationController
     @personal_message.conversation_id = @conversation.id
     @personal_message.save!
 
+    if @personal_message.save
+      (@conversation.users.uniq - [current_user]).each do |user|
+        Notification.create(recipient: user, actor: current_user,
+                            action: 'posted', notifiable: @personal_message)
+      end
+    end
+
     flash[:success] = "Your message was sent!"
     redirect_to conversation_path(@conversation)
   end

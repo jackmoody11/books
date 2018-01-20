@@ -19,11 +19,6 @@
         	<div class="collapse navbar-collapse" id="example-navbar-primary">
         		<ul class="nav navbar-nav navbar-right">
               <% if user_signed_in? %>
-    				      <li>
-				           <%= link_to listings_path do %>
-					         <i class="material-icons">reorder</i>Books
-				           <% end %>
-                 </li>
                  <li>
                    <%= link_to courses_path do %>
 					         <i class="material-icons">school</i>Courses
@@ -48,13 +43,22 @@
 
             <% if user_signed_in? %>
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="material-icons">person</i><%= "(Admin)" if current_user.admin? %><%= "Profile" if !current_user.admin? %> <span class="caret"></span></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                  <i class="material-icons">person</i><%= "(Admin)" if current_user.admin? %><%= "Profile" if !current_user.admin? %> <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                   <li><%= link_to "Messages", conversations_path %></li>
                   <li><%= link_to "View profile", user_path(current_user) %></li>
                   <li><%= link_to "Edit profile", edit_user_path(current_user) %></li>
                   <li class="divider"></li>
                   <li><%= link_to "Log out", logout_path, method: :delete %></li>
+                </ul>
+              </li>
+              <li class="dropdown" data-behavior='notifications'>
+                <a href="#" class="btn btn-primary btn-raised" data-toggle='dropdown' role="button" aria-haspopup="true" aria-expanded="false" data-behavior='notifications-link'>
+                  <i class="material-icons">notifications</i><span data-behavior='unread-count'></span>
+                </a>
+                <ul class="dropdown-menu" data-behavior='notification-items' id='notifications-ul'>
+
                 </ul>
               </li>
             <% else %>

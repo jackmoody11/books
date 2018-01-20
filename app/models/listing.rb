@@ -1,5 +1,5 @@
 class Listing < ApplicationRecord
-  include HTTParty
+  # include HTTParty
   belongs_to :user
   has_many :listing_categories
   has_many :listing_courses

@@ -11,6 +11,7 @@ class User < ApplicationRecord
   has_many :received_conversations, class_name: 'Conversation',
            foreign_key: 'received_id'
   has_many :personal_messages, dependent: :destroy
+  has_many :notifications, foreign_key: :recipient_id
   before_save { self.email = email.downcase }
   VALID_UNC_EMAIL = /\A[\w+\-.]+@live.unc.edu\z/i
   validates :email, presence: true, length: { maximum: 105 },

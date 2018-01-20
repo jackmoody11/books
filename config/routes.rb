@@ -4,9 +4,9 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :listings do
-    collection do
-      get :lookup
-    end
+    # collection do
+    #   get :lookup
+    # end
   end
   get '/price_lookup', to: 'listings#price_lookup'
   resources :users
@@ -20,12 +20,11 @@ Rails.application.routes.draw do
   get '/terms', to: 'pages#terms'
   get '/privacy', to: 'pages#privacy'
 
-  # Add lookup
-  # resources :listings do
-  #   collection do
-  #     get :lookup
-  #   end
-  # end
+  resources :notifications do
+    collection do
+      post :mark_as_read
+    end
+  end
 
   # get 'my-search-url', to: 'listings#search', as: 'my_search_url'
 
